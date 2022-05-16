@@ -6,5 +6,59 @@ body {
 }
 
 #calculator {
+    width: 25%;
+    height: 400px;
+    /* background-color: orange; */
     display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#display {
+    grid-column: 1 / span 4;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    /* background-color: orange; */
+    padding-bottom: 25px;
+}
+
+#equal {
+    grid-column: 3 / span 2;
+    background-color: orangered;
+    color: white;
+    border-radius: 16px;
+}
+
+#equal:active {
+    background-color: rgb(211, 56, 0);
+}
+
+.operators {
+    background-color: white;
+    border: none;
+    color: orangered;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.operators:hover {
+    cursor: pointer;
+}
+
+.operators:active {
+    background-color: rgb(219, 219, 219);
+}
+
+.nums {
+    background-color: white;
+    border: none;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.nums:hover {
+    cursor: pointer;
+}
+
+.nums:active {
+    background-color: rgb(219, 219, 219);
 }

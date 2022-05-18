@@ -30,3 +30,21 @@ function operate(op, num1, num2) {
             break;
     }
 }
+
+const display = document.getElementById('display');
+const btns = document.querySelectorAll('.nums');
+
+btns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        display.innerText += btn.innerText;
+    });
+});
+
+
+// const calc = document.getElementById('calculator');
+
+// calc.addEventListener('click', (btn) => {
+//     if (btn.target && btn.target.matches('button.nums')) {
+//         console.log(btn.innerText);
+//     }
+// });

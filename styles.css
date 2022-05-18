@@ -11,6 +11,7 @@ body {
     /* background-color: orange; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
 }
 
 #display {
@@ -18,7 +19,7 @@ body {
     border-bottom-style: solid;
     border-bottom-width: 2px;
     /* background-color: orange; */
-    padding-bottom: 25px;
+    height: 42px;
 }
 
 #equal {
@@ -38,6 +39,7 @@ body {
     color: orangered;
     font-size: 22px;
     font-weight: 700;
+    border-radius: 16px;
 }
 
 .operators:hover {
@@ -53,6 +55,7 @@ body {
     border: none;
     font-size: 22px;
     font-weight: 700;
+    border-radius: 16px;
 }
 
 .nums:hover {

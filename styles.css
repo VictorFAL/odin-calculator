@@ -16,8 +16,15 @@ body {
     border-bottom-style: solid;
     border-bottom-width: 2px;
     height: 15%;
+    position: relative;
+}
+
+#display-txt {
     font-size: 32px;
     font-weight: 700;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 #keyboard {
@@ -27,10 +34,14 @@ body {
     height: 85%;
 }
 
+/* equal */
 #equal {
     grid-column: 3 / span 2;
     background-color: orangered;
+    border: none;
     color: white;
+    font-size: 22px;
+    font-weight: 700;
     border-radius: 16px;
 }
 
@@ -38,6 +49,7 @@ body {
     background-color: rgb(211, 56, 0);
 }
 
+/* operators */
 .operators {
     background-color: white;
     border: none;
@@ -55,6 +67,7 @@ body {
     background-color: rgb(219, 219, 219);
 }
 
+/* nums */
 .nums {
     background-color: white;
     border: none;
@@ -68,5 +81,23 @@ body {
 }
 
 .nums:active {
+    background-color: rgb(219, 219, 219);
+}
+
+/* ac-del */
+.ac-del {
+    background-color: white;
+    border: none;
+    color: orangered;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 16px;
+}
+
+.ac-del:hover {
+    cursor: pointer;
+}
+
+.ac-del:active {
     background-color: rgb(219, 219, 219);
 }

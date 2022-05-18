@@ -8,18 +8,23 @@ body {
 #calculator {
     width: 25%;
     height: 400px;
-    /* background-color: orange; */
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 4px;
+    display: flex;
+    flex-direction: column;
 }
 
 #display {
-    grid-column: 1 / span 4;
     border-bottom-style: solid;
     border-bottom-width: 2px;
-    /* background-color: orange; */
-    height: 42px;
+    height: 15%;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+#keyboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    height: 85%;
 }
 
 #equal {

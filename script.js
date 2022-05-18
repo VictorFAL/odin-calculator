@@ -39,12 +39,3 @@ btns.forEach((btn) => {
         display.innerText += btn.innerText;
     });
 });
-
-
-// const calc = document.getElementById('calculator');
-
-// calc.addEventListener('click', (btn) => {
-//     if (btn.target && btn.target.matches('button.nums')) {
-//         console.log(btn.innerText);
-//     }
-// });

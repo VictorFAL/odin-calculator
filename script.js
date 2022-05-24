@@ -80,7 +80,7 @@ dot.addEventListener('click', () => {
 })
 
 
-// TODO: Keyboard support
+// Keyboard support
 document.addEventListener('keydown', (e) => {
     let keyName = e.key;
 
@@ -96,6 +96,23 @@ document.addEventListener('keydown', (e) => {
             break;
         case '/':
             defineOps('/')
+            break;
+        case 'Enter':
+            if (values.length < 2) {
+                values = []
+            } else {
+                result()
+            }
+        
+            if (display.innerText.includes('.')) {
+                dot.disabled = true;
+            }
+            break;
+        case 'Backspace':
+            let newNum = display.innerText.slice(0, -1);
+            display.innerText = newNum;
+
+            checkDot();
             break;
         default:
             if(!isNaN(keyName)) {

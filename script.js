@@ -8,7 +8,7 @@ let values = [];
 // Populate display by pressing number buttons
 btns.forEach((btn) => {
     btn.addEventListener('click', () => {
-        if (display.innerText == 'Infinity') {
+        if (isNaN(display.innerText)) {
             display.innerText = '';
             values = [];
         }
@@ -29,9 +29,7 @@ ops.forEach((op) => {
         values.push(parseFloat(display.innerText));
         display.innerText = '';
 
-        if (dot.disabled && !display.innerText.includes('.')) {
-            dot.disabled = false;
-        }
+        checkDot();
     });
 });
 
@@ -59,9 +57,7 @@ ac.addEventListener('click', () => {
     display.innerText = '';
     values = [];
 
-    if (dot.disabled && !display.innerText.includes('.')) {
-        dot.disabled = false;
-    }
+    checkDot();
 });
 
 
@@ -72,13 +68,11 @@ del.addEventListener('click', () => {
     let newNum = display.innerText.slice(0, -1);
     display.innerText = newNum;
 
-    if (dot.disabled && !display.innerText.includes('.')) {
-        dot.disabled = false;
-    }
+    checkDot();
 });
 
 
-// Disable "." if it is already on the display
+// Disable "." if already pressed
 const dot = document.getElementById('dot');
 
 dot.addEventListener('click', () => {
@@ -87,9 +81,37 @@ dot.addEventListener('click', () => {
 
 
 // TODO: Keyboard support
+document.addEventListener('keydown', (e) => {
+    let keyName = e.key;
+
+    switch(keyName) {
+        case '+':
+            defineOps('+')
+            break;
+        case '-':
+            defineOps('-')
+            break;
+        case '*':
+            defineOps('X')
+            break;
+        case '/':
+            defineOps('/')
+            break;
+        default:
+            if(!isNaN(keyName)) {
+                popDisplay(keyName);
+            } else if (keyName == '.') {
+                popDisplay(keyName);
+                dot.disabled = true;
+            }
+            break;
+    }
+},);
 
 
 // ========== Functions ==========
+
+// Operations
 function add(num1, num2) {
     return num1 + num2;
 }
@@ -130,4 +152,34 @@ function result() {
     display.innerText = String(result.toFixed(2));
 
     values = [];
+}
+
+// Check if "." is on display
+function checkDot() {
+    if (dot.disabled && !display.innerText.includes('.')) {
+        dot.disabled = false;
+    }
+}
+
+// Populate display
+function popDisplay(btnText) {
+    if (isNaN(display.innerText)) {
+        display.innerText = '';
+        values = [];
+    }
+
+    display.innerText += btnText;
+}
+
+// Operators
+function defineOps(op) {
+    if (values.length > 0) {
+        result();
+    }
+
+    values.push(op);
+    values.push(parseFloat(display.innerText));
+    display.innerText = '';
+
+    checkDot();
 }

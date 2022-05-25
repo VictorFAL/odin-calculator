@@ -84,8 +84,8 @@ body {
     background-color: rgb(219, 219, 219);
 }
 
-/* ac-del */
-.ac-del {
+/* unique-op */
+.unique-op {
     background-color: white;
     border: none;
     color: orangered;
@@ -94,10 +94,10 @@ body {
     border-radius: 16px;
 }
 
-.ac-del:hover {
+.unique-op:hover {
     cursor: pointer;
 }
 
-.ac-del:active {
+.unique-op:active {
     background-color: rgb(219, 219, 219);
 }

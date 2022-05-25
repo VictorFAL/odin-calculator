@@ -80,6 +80,21 @@ dot.addEventListener('click', () => {
 })
 
 
+// "%" key functionality==========================================================================================
+const cent = document.getElementById('cent');
+
+cent.addEventListener('click', () => {
+    if (isNaN(display.innerText)) {
+        display.innerText = '';
+        values = [];
+    } else {
+        let newNum = parseFloat(display.innerText) / 100;
+        display.innerText = String(newNum);
+        dot.disabled = true;
+    }
+})
+
+
 // Keyboard support
 document.addEventListener('keydown', (e) => {
     let keyName = e.key;
